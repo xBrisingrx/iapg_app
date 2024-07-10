@@ -3,7 +3,7 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 
 
-import React from 'react';
+import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import HelloMessage from './components/App';
 
@@ -11,5 +11,9 @@ const container = document.getElementById('app');
 const root = createRoot(container);
 
 document.addEventListener('DOMContentLoaded', () => {
-  root.render(<HelloMessage name="World" />);
+  root.render(
+    <StrictMode>
+      <HelloMessage name="World" />
+    </StrictMode>
+  );
 });
